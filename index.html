@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق إن (SOOQin) — بيع واشتري كل شيء في الكويت بسهولة ومجاناً</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <!-- RemixIcon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Google Fonts (Tajawal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- Standalone Phase 1 Stylesheet -->
+    <link rel="stylesheet" href="./style.css?v=20261109-resp2">
+</head>
+
+<body class="sq-body" id="top">
+
+    <!-- ======================================================================
+         1. SIMPLE TOP BAR
+         ====================================================================== -->
+    <div class="sq-topbar">
+        <div class="sq-container sq-topbar__inner">
+            <div class="sq-topbar__right">
+                <span class="sq-topbar__tag">مجاناً 100%</span>
+                <span>أضف إعلانك وبِع سيارتك، عقارك، أو أجهزتك مباشرة للمشتري بدون عمولة</span>
+            </div>
+            <div class="sq-topbar__links">
+                <a href="#apps_download"><i class="ri-smartphone-line"></i> تطبيق الجوال</a>
+                <a href="#shops-sec"><i class="ri-store-2-line"></i> الدليل التجاري</a>
+                <a href="#help"><i class="ri-question-line"></i> المساعدة</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         2. MAIN CLASSIFIEDS HEADER (LOGO + SEARCH + BIG "SELL NOW" BUTTON)
+         ====================================================================== -->
+    <header class="sq-header">
+        <div class="sq-container sq-header__main">
+            <!-- Brand Logo -->
+            <a href="./index.html" class="sq-logo">
+                <span class="sq-logo__box">
+                    <img src="../assets/img/logo.png" alt="سوق إن">
+                </span>
+                <span class="sq-logo__text">
+                    <span class="sq-logo__name">سوق إن</span>
+                    <span class="sq-logo__tagline">سوق البيع والشراء في الكويت</span>
+                </span>
+            </a>
+
+            <!-- Simple Direct Search Bar -->
+            <form action="#featured-ads" method="GET" class="sq-header-search" role="search">
+                <div class="sq-header-search__city">
+                    <i class="ri-map-pin-2-fill"></i>
+                    <select name="city" aria-label="اختر المنطقة">
+                        <option value="">كل الكويت</option>
+                        <option value="1">العاصمة</option>
+                        <option value="2">حولي والسالمية</option>
+                        <option value="3">الفروانية</option>
+                        <option value="4">الأحمدي</option>
+                        <option value="5">الجهراء</option>
+                        <option value="6">مبارك الكبير</option>
+                    </select>
+                </div>
+                <input type="search" name="q" class="sq-header-search__input"
+                    placeholder="ابحث عما تريد شراؤه: سيارة، شقة، آيفون، أثاث...">
+                <button type="submit" class="sq-header-search__btn">
+                    <i class="ri-search-line"></i>
+                    <span>بحث</span>
+                </button>
+            </form>
+
+            <!-- Account + Favorites + Unmistakable "Sell / Post Ad" Button -->
+            <div class="sq-header__actions">
+                <a href="#favorites" class="sq-action-link" title="المفضلة">
+                    <i class="ri-heart-3-line"></i>
+                    <span>المفضلة</span>
+                    <span class="sq-action-link__badge" id="favBadgeCount">3</span>
+                </a>
+                <a href="#login" class="sq-action-link">
+                    <i class="ri-user-3-line"></i>
+                    <span>دخول / تسجبل</span>
+                </a>
+                <a href="#post-ad" class="sq-btn-sell">
+                    <i class="ri-camera-fill"></i>
+                    <span>+ أضف إعلانك <b class="sq-hide-mobile" style="font-weight:inherit;">(بيع الآن)</b></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Category Links Bar -->
+        <nav class="sq-nav-bar" aria-label="أقسام الإعلانات">
+            <div class="sq-container sq-nav-bar__list">
+                <a href="./index.html" class="sq-nav-item is-active">
+                    <i class="ri-home-4-fill"></i>
+                    <span>كل الإعلانات</span>
+                </a>
+                <a href="#cars-ads" class="sq-nav-item">
+                    <i class="ri-roadster-fill"></i>
+                    <span>حراج السيارات</span>
+                </a>
+                <a href="#realestate-ads" class="sq-nav-item">
+                    <i class="ri-building-2-fill"></i>
+                    <span>عقارات للبيع والإيجار</span>
+                </a>
+                <a href="#electronics-ads" class="sq-nav-item">
+                    <i class="ri-smartphone-fill"></i>
+                    <span>موبايلات وإلكترونيات</span>
+                </a>
+                <a href="#featured-ads" class="sq-nav-item">
+                    <i class="ri-sofa-fill"></i>
+                    <span>أثاث ومفروشات</span>
+                </a>
+                <a href="#featured-ads" class="sq-nav-item">
+                    <i class="ri-tools-fill"></i>
+                    <span>خدمات ومقاولات</span>
+                </a>
+                <a href="#featured-ads" class="sq-nav-item">
+                    <i class="ri-briefcase-4-fill"></i>
+                    <span>وظائف</span>
+                </a>
+                <a href="#shops-sec" class="sq-nav-item sq-nav-item--highlight">
+                    <i class="ri-store-2-fill"></i>
+                    <span>المتاجر والمعارض المعتمدة</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================================================================
+             3. SIMPLE, CLEAR BUY & SELL HERO BANNER
+             ================================================================== -->
+        <section class="sq-hero" aria-label="بانر البيع والشراء">
+            <div class="sq-container">
+                <div class="sq-hero-banner">
+                    <!-- Right: Direct Selling & Buying Message -->
+                    <div>
+                        <span class="sq-hero-banner__badge">
+                            <i class="ri-Verified-badge-fill"></i>
+                            أكبر سوق مفتوح للبيع والشراء في الكويت
+                        </span>
+                        <h1 class="sq-hero-banner__title">
+                            عندك شي تبي تبيعه؟ أو تبحث عن <span>أفضل سعر للشراء؟</span>
+                        </h1>
+                        <p class="sq-hero-banner__sub">
+                            صوّر سلعتك، حدد السعر، وانشر إعلانك مجاناً في أقل من دقيقة، أو تصفح آلاف السيارات والعقارات والأجهزة المعروضة للبيع وتواصل مع البائع مباشرة.
+                        </p>
+                        <div class="sq-hero-banner__ctas">
+                            <a href="#post-ad" class="sq-hero-btn-primary">
+                                <i class="ri-camera-lens-fill"></i>
+                                <span>انشر إعلانك مجاناً الآن</span>
+                            </a>
+                            <a href="#featured-ads" class="sq-hero-btn-secondary">
+                                <i class="ri-price-tag-3-line"></i>
+                                <span>تصفح أحدث المعروض للبيع</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Left: Live Visual Examples of Items Being Sold with Price Tags -->
+                    <div class="sq-hero-showcase">
+                        <a href="#cars-ads" class="sq-mini-deal">
+                            <img src="../uploads/ads/1774144240_69bf4df0175c0.png" onerror="this.src='../assets/img/character.png'" alt="سيارات للبيع">
+                            <div class="sq-mini-deal__info">
+                                <div class="sq-mini-deal__cat">سيارات للبيع</div>
+                                <div class="sq-mini-deal__name">تاهو Z71 موديل 2023</div>
+                                <div class="sq-mini-deal__price">18,200 د.ك</div>
+                            </div>
+                        </a>
+
+                        <a href="#electronics-ads" class="sq-mini-deal">
+                            <img src="../uploads/ads/1774143537_69bf4b31cf565.png" onerror="this.src='../assets/img/character.png'" alt="موبايلات للبيع">
+                            <div class="sq-mini-deal__info">
+                                <div class="sq-mini-deal__cat">موبايلات</div>
+                                <div class="sq-mini-deal__name">آيفون 15 برو ماكس</div>
+                                <div class="sq-mini-deal__price">310 د.ك</div>
+                            </div>
+                        </a>
+
+                        <a href="#realestate-ads" class="sq-mini-deal">
+                            <img src="../uploads/ads/1774143801_69bf4c39aa3b2.png" onerror="this.src='../assets/img/character.png'" alt="عقارات">
+                            <div class="sq-mini-deal__info">
+                                <div class="sq-mini-deal__cat">عقارات الكويت</div>
+                                <div class="sq-mini-deal__name">فيلا في الزهراء 500م</div>
+                                <div class="sq-mini-deal__price">420,000 د.ك</div>
+                            </div>
+                        </a>
+
+                        <a href="#electronics-ads" class="sq-mini-deal">
+                            <img src="../uploads/ads/1774143997_69bf4cfdc63b5.png" onerror="this.src='../assets/img/character.png'" alt="لابتوبات">
+                            <div class="sq-mini-deal__info">
+                                <div class="sq-mini-deal__cat">أجهزة ولابتوب</div>
+                                <div class="sq-mini-deal__name">ماك بوك برو M3</div>
+                                <div class="sq-mini-deal__price">790 د.ك</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             4. MAIN CLASSIFIEDS CATEGORIES (أقسام البيع والشراء بوضوح)
+             ================================================================== -->
+        <section class="sq-categories-sec" id="categories" aria-label="أقسام السوق">
+            <div class="sq-container">
+                <div class="sq-sec-head">
+                    <h2 class="sq-sec-head__title">
+                        <i class="ri-apps-2-fill"></i>
+                        <span>تصفح حسب القسم</span>
+                        <span class="sq-sec-head__count">8 أقسام رئيسية</span>
+                    </h2>
+                    <a href="#featured-ads" class="sq-sec-head__more">
+                        <span>كل الأقسام</span>
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                </div>
+
+                <div class="sq-cat-grid">
+                    <a href="#cars-ads" class="sq-cat-tile" style="--tile-bg: #eff6ff; --tile-color: #2563eb;">
+                        <span class="sq-cat-tile__icon"><i class="ri-roadster-fill"></i></span>
+                        <span class="sq-cat-tile__name">سيارات ومركبات</span>
+                        <span class="sq-cat-tile__ads">3,420 إعلان</span>
+                    </a>
+
+                    <a href="#realestate-ads" class="sq-cat-tile" style="--tile-bg: #f0fdf4; --tile-color: #16a34a;">
+                        <span class="sq-cat-tile__icon"><i class="ri-building-2-fill"></i></span>
+                        <span class="sq-cat-tile__name">عقارات وأراضي</span>
+                        <span class="sq-cat-tile__ads">2,180 إعلان</span>
+                    </a>
+
+                    <a href="#electronics-ads" class="sq-cat-tile" style="--tile-bg: #faf5ff; --tile-color: #7c3aed;">
+                        <span class="sq-cat-tile__icon"><i class="ri-smartphone-fill"></i></span>
+                        <span class="sq-cat-tile__name">موبايلات وتابلت</span>
+                        <span class="sq-cat-tile__ads">1,950 إعلان</span>
+                    </a>
+
+                    <a href="#electronics-ads" class="sq-cat-tile" style="--tile-bg: #ecfeff; --tile-color: #0891b2;">
+                        <span class="sq-cat-tile__icon"><i class="ri-macbook-fill"></i></span>
+                        <span class="sq-cat-tile__name">إلكترونيات وأجهزة</span>
+                        <span class="sq-cat-tile__ads">1,410 إعلان</span>
+                    </a>
+
+                    <a href="#featured-ads" class="sq-cat-tile" style="--tile-bg: #fffbeb; --tile-color: #d97706;">
+                        <span class="sq-cat-tile__icon"><i class="ri-sofa-fill"></i></span>
+                        <span class="sq-cat-tile__name">أثاث ومفروشات</span>
+                        <span class="sq-cat-tile__ads">1,340 إعلان</span>
+                    </a>
+
+                    <a href="#featured-ads" class="sq-cat-tile" style="--tile-bg: #fff1f2; --tile-color: #e11d48;">
+                        <span class="sq-cat-tile__icon"><i class="ri-tools-fill"></i></span>
+                        <span class="sq-cat-tile__name">خدمات ومقاولات</span>
+                        <span class="sq-cat-tile__ads">890 إعلان</span>
+                    </a>
+
+                    <a href="#featured-ads" class="sq-cat-tile" style="--tile-bg: #fefce8; --tile-color: #ca8a04;">
+                        <span class="sq-cat-tile__icon"><i class="ri-vip-diamond-fill"></i></span>
+                        <span class="sq-cat-tile__name">ساعات ومقتنيات</span>
+                        <span class="sq-cat-tile__ads">640 إعلان</span>
+                    </a>
+
+                    <a href="#shops-sec" class="sq-cat-tile" style="--tile-bg: #f1f5f9; --tile-color: #0f172a;">
+                        <span class="sq-cat-tile__icon"><i class="ri-store-2-fill"></i></span>
+                        <span class="sq-cat-tile__name">الدليل التجاري</span>
+                        <span class="sq-cat-tile__ads">350 متجر</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             5. SECTION 1: FEATURED ADS FOR SALE (إعلانات مميزة للبيع)
+             ================================================================== -->
+        <section class="sq-ads-section" id="featured-ads" aria-label="إعلانات مميزة">
+            <div class="sq-container">
+                <div class="sq-sec-head">
+                    <h2 class="sq-sec-head__title">
+                        <i class="ri-fire-fill" style="color: #e11d48;"></i>
+                        <span>إعلانات مميزة للبيع اليوم</span>
+                        <span class="sq-sec-head__count">معروضة الآن</span>
+                    </h2>
+                    <a href="#all-featured" class="sq-sec-head__more">
+                        <span>عرض الكل</span>
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                </div>
+
+                <div class="sq-ads-grid">
+                    <!-- Ad 1 -->
+                    <article class="sq-ad-card sq-ad-card--featured">
+                        <div class="sq-ad-card__photo">
+                            <span class="sq-ad-card__tag"><i class="ri-star-fill"></i> إعلان مميز</span>
+                            <button type="button" class="sq-ad-card__fav" aria-label="مفضلة"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 8</span>
+                            <a href="#ad-1">
+                                <img src="../uploads/ads/1774144240_69bf4df0175c0.png" onerror="this.src='../assets/img/character.png'" alt="شفروليه تاهو">
+                            </a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">18,200 د.ك</span>
+                                <span class="sq-ad-card__cat-name">سيارات للبيع</span>
+                            </div>
+                            <a href="#ad-1" class="sq-ad-card__title">شفروليه تاهو Z71 موديل 2023 وارد الغانم صبغ الوكالة</a>
+                            <div class="sq-ad-card__specs">
+                                <span>موديل 2023</span>
+                                <span>28,000 كم</span>
+                                <span>شرط الفحص</span>
+                            </div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> الري • منذ ساعة</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" target="_blank" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ad 2 -->
+                    <article class="sq-ad-card sq-ad-card--featured">
+                        <div class="sq-ad-card__photo">
+                            <span class="sq-ad-card__tag"><i class="ri-star-fill"></i> إعلان مميز</span>
+                            <button type="button" class="sq-ad-card__fav" aria-label="مفضلة"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 12</span>
+                            <a href="#ad-2">
+                                <img src="../uploads/ads/1774143801_69bf4c39aa3b2.png" onerror="this.src='../assets/img/character.png'" alt="فيلا الزهراء">
+                            </a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">420,000 د.ك</span>
+                                <span class="sq-ad-card__cat-name">فلل للبيع</span>
+                            </div>
+                            <a href="#ad-2" class="sq-ad-card__title">فيلا سكنية فاخرة للبيع في الزهراء 500م تشطيب سوبر ديلوكس</a>
+                            <div class="sq-ad-card__specs">
+                                <span>500 م²</span>
+                                <span>3 أدوار</span>
+                                <span>وثيقة حرة</span>
+                            </div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> الزهراء • منذ ساعتين</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" target="_blank" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ad 3 -->
+                    <article class="sq-ad-card sq-ad-card--featured">
+                        <div class="sq-ad-card__photo">
+                            <span class="sq-ad-card__tag sq-ad-card__tag--urgent">لقطة اليوم</span>
+                            <button type="button" class="sq-ad-card__fav" aria-label="مفضلة"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 5</span>
+                            <a href="#ad-3">
+                                <img src="../uploads/ads/1774143997_69bf4cfdc63b5.png" onerror="this.src='../assets/img/character.png'" alt="ماك بوك برو">
+                            </a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">790 د.ك</span>
+                                <span class="sq-ad-card__cat-name">لابتوبات</span>
+                            </div>
+                            <a href="#ad-3" class="sq-ad-card__title">ماك بوك برو M3 Max شاشة 16 بوصة رام 36GB كفالة الغانم</a>
+                            <div class="sq-ad-card__specs">
+                                <span>M3 Max</span>
+                                <span>رام 36GB</span>
+                                <span>كالجديد</span>
+                            </div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> شرق • منذ 3 ساعات</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" target="_blank" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ad 4 -->
+                    <article class="sq-ad-card sq-ad-card--featured">
+                        <div class="sq-ad-card__photo">
+                            <span class="sq-ad-card__tag"><i class="ri-star-fill"></i> إعلان مميز</span>
+                            <button type="button" class="sq-ad-card__fav" aria-label="مفضلة"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 4</span>
+                            <a href="#ad-4">
+                                <img src="../uploads/ads/1774144743_69bf4fe761f84.png" onerror="this.src='../assets/img/character.png'" alt="ساعة رولكس">
+                            </a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">3,450 د.ك</span>
+                                <span class="sq-ad-card__cat-name">ساعات فاخرة</span>
+                            </div>
+                            <a href="#ad-4" class="sq-ad-card__title">ساعة رولكس ديت جست 41 مينا أزرق أصلية مع البوكس والضمان</a>
+                            <div class="sq-ad-card__specs">
+                                <span>أصلية 100%</span>
+                                <span>مقاس 41</span>
+                                <span>مع الشهادة</span>
+                            </div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> الصالحية • منذ 4 ساعات</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" target="_blank" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             6. SECTION 2: CARS & MOTORS FOR SALE (حراج السيارات والمركبات)
+             ================================================================== -->
+        <section class="sq-ads-section" id="cars-ads" aria-label="إعلانات السيارات">
+            <div class="sq-container">
+                <div class="sq-sec-head">
+                    <h2 class="sq-sec-head__title">
+                        <i class="ri-roadster-fill" style="color: #2563eb;"></i>
+                        <span>حراج السيارات والمركبات</span>
+                        <span class="sq-sec-head__count">بيع وشراء مباشر</span>
+                    </h2>
+                    <a href="#all-cars" class="sq-sec-head__more">
+                        <span>كل إعلانات السيارات</span>
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                </div>
+
+                <div class="sq-ads-grid">
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 9</span>
+                            <a href="#c-1"><img src="../uploads/ads/1774142297_69bf465902960.png" onerror="this.src='../assets/img/character.png'" alt="نيسان باترول"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">17,800 د.ك</span>
+                                <span class="sq-ad-card__cat-name">نيسان</span>
+                            </div>
+                            <a href="#c-1" class="sq-ad-card__title">نيسان باترول بلاتينيوم V8 موديل 2022 وارد البابطين</a>
+                            <div class="sq-ad-card__specs"><span>2022</span><span>44,000 كم</span><span>صبغ الوكالة</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> الشويخ • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 7</span>
+                            <a href="#c-2"><img src="../uploads/ads/1774142731_69bf480b789a5.png" onerror="this.src='../assets/img/character.png'" alt="مرسيدس"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">16,400 د.ك</span>
+                                <span class="sq-ad-card__cat-name">مرسيدس</span>
+                            </div>
+                            <a href="#c-2" class="sq-ad-card__title">مرسيدس E200 AMG موديل 2022 بانوراما وارد البشر</a>
+                            <div class="sq-ad-card__specs"><span>2022</span><span>29,000 كم</span><span>تحت الكفالة</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> قرطبة • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 6</span>
+                            <a href="#c-3"><img src="../uploads/ads/1774142989_69bf490dd34d7.png" onerror="this.src='../assets/img/character.png'" alt="لكزس"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">13,900 د.ك</span>
+                                <span class="sq-ad-card__cat-name">لكزس</span>
+                            </div>
+                            <a href="#c-3" class="sq-ad-card__title">لكزس ES 300h هايبرد موديل 2023 الساير بحالة الوكالة</a>
+                            <div class="sq-ad-card__specs"><span>2023</span><span>19,500 كم</span><span>سيرفس منتظم</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> العقيلة • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 10</span>
+                            <a href="#c-4"><img src="../uploads/ads/1774144240_69bf4df0175c0.png" onerror="this.src='../assets/img/character.png'" alt="لاندكروزر"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">21,500 د.ك</span>
+                                <span class="sq-ad-card__cat-name">تويوتا</span>
+                            </div>
+                            <a href="#c-4" class="sq-ad-card__title">تويوتا لاندكروزر GXR تون تيربو 2023 وارد الساير</a>
+                            <div class="sq-ad-card__specs"><span>2023</span><span>31,000 كم</span><span>صبغ وكالة</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> كيفان • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             7. DIRECT "SELL YOUR ITEM" CALL-TO-ACTION BANNER
+             ================================================================== -->
+        <section class="sq-sell-strip" id="post-ad" aria-label="أضف إعلانك">
+            <div class="sq-container">
+                <div class="sq-sell-box">
+                    <div class="sq-sell-box__text">
+                        <h3>عندك غرض تبي تبيعه بسرعة؟</h3>
+                        <p>اعرضه الآن مجاناً أمام آلاف المشترين في الكويت بـ 3 خطوات بسيطة:</p>
+                    </div>
+                    <div class="sq-sell-box__steps">
+                        <div class="sq-sell-step"><span>1</span> صوّر الغرض من جوالك</div>
+                        <div class="sq-sell-step"><span>2</span> اكتب السعر ورقمك</div>
+                        <div class="sq-sell-step"><span>3</span> استقبل اتصالات المشترين</div>
+                    </div>
+                    <a href="#create-ad" class="sq-btn-sell">
+                        <i class="ri-add-circle-fill"></i>
+                        <span>أضف إعلانك مجاناً الآن</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             8. SECTION 3: PHONES, ELECTRONICS & HOME ITEMS FOR SALE
+             ================================================================== -->
+        <section class="sq-ads-section" id="electronics-ads" aria-label="إلكترونيات وأجهزة للبيع">
+            <div class="sq-container">
+                <div class="sq-sec-head">
+                    <h2 class="sq-sec-head__title">
+                        <i class="ri-smartphone-fill" style="color: #7c3aed;"></i>
+                        <span>موبايلات وإلكترونيات وأجهزة للبيع</span>
+                        <span class="sq-sec-head__count">جديد ومستعمل</span>
+                    </h2>
+                    <a href="#all-electronics" class="sq-sec-head__more">
+                        <span>عرض الكل</span>
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                </div>
+
+                <div class="sq-ads-grid">
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 4</span>
+                            <a href="#e-1"><img src="../uploads/ads/1774143537_69bf4b31cf565.png" onerror="this.src='../assets/img/character.png'" alt="آيفون 15 برو ماكس"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">310 د.ك</span>
+                                <span class="sq-ad-card__cat-name">آيفون</span>
+                            </div>
+                            <a href="#e-1" class="sq-ad-card__title">آيفون 15 برو ماكس 256 جيجا تيتانيوم طبيعي بطارية 99%</a>
+                            <div class="sq-ad-card__specs"><span>256GB</span><span>بطارية 99%</span><span>مع الكرتون</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> الجابرية • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 3</span>
+                            <a href="#e-2"><img src="../uploads/ads/1774145183_69bf519f89c3b.png" onerror="this.src='../assets/img/character.png'" alt="شاشة سامسونج"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">195 د.ك</span>
+                                <span class="sq-ad-card__cat-name">شاشات وتلفزيونات</span>
+                            </div>
+                            <a href="#e-2" class="sq-ad-card__title">شاشة سامسونج سمارت 65 بوصة 4K QLED جديدة بالكرتون</a>
+                            <div class="sq-ad-card__specs"><span>65 بوصة</span><span>4K QLED</span><span>جديد</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> السالمية • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 5</span>
+                            <a href="#e-3"><img src="../uploads/ads/1774145525_69bf52f593261.png" onerror="this.src='../assets/img/character.png'" alt="ماكينة قهوة"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">110 د.ك</span>
+                                <span class="sq-ad-card__cat-name">أجهزة منزلية</span>
+                            </div>
+                            <a href="#e-3" class="sq-ad-card__title">ماكينة قهوة إسبريسو ديلونجي إيطالية احترافية مع مطحنة</a>
+                            <div class="sq-ad-card__specs"><span>DeLonghi</span><span>إيطالي</span><span>استعمال خفيف</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> مشرف • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="sq-ad-card">
+                        <div class="sq-ad-card__photo">
+                            <button type="button" class="sq-ad-card__fav"><i class="ri-heart-3-line"></i></button>
+                            <span class="sq-ad-card__count"><i class="ri-camera-line"></i> 6</span>
+                            <a href="#e-4"><img src="../uploads/ads/1774145759_69bf53df5ef99.png" onerror="this.src='../assets/img/character.png'" alt="أرض سكنية"></a>
+                        </div>
+                        <div class="sq-ad-card__body">
+                            <div class="sq-ad-card__price-row">
+                                <span class="sq-ad-card__price">310,000 د.ك</span>
+                                <span class="sq-ad-card__cat-name">عقارات وأراضي</span>
+                            </div>
+                            <a href="#e-4" class="sq-ad-card__title">أرض سكنية للبيع في أبو فطيرة 400م بطن وظهر وثيقة حرة</a>
+                            <div class="sq-ad-card__specs"><span>400 م²</span><span>بطن وظهر</span><span>مبارك الكبير</span></div>
+                            <div class="sq-ad-card__foot">
+                                <span class="sq-ad-card__meta"><i class="ri-map-pin-line"></i> أبو فطيرة • اليوم</span>
+                                <div class="sq-ad-card__contact">
+                                    <a href="https://wa.me/96522000000" class="sq-contact-btn sq-contact-btn--wa"><i class="ri-whatsapp-fill"></i> <span>واتساب</span></a>
+                                    <a href="tel:+96522000000" class="sq-contact-btn sq-contact-btn--call"><i class="ri-phone-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             9. VERIFIED SHOPS & SHOWROOMS (المعارض والمتاجر المعتمدة)
+             ================================================================== -->
+        <section class="sq-ads-section" id="shops-sec" aria-label="المتاجر والمعارض">
+            <div class="sq-container">
+                <div class="sq-sec-head">
+                    <h2 class="sq-sec-head__title">
+                        <i class="ri-store-2-fill" style="color: #16a34a;"></i>
+                        <span>المعارض والمتاجر المعتمدة</span>
+                        <span class="sq-sec-head__count">الدليل التجاري</span>
+                    </h2>
+                    <a href="#all-shops" class="sq-sec-head__more">
+                        <span>تصفح كل المتاجر</span>
+                        <i class="ri-arrow-left-s-line"></i>
+                    </a>
+                </div>
+
+                <div class="sq-shops-grid">
+                    <div class="sq-shop-card">
+                        <div class="sq-shop-card__top">
+                            <span class="sq-shop-card__icon"><i class="ri-roadster-fill"></i></span>
+                            <div>
+                                <div class="sq-shop-card__name">معرض النخبة للسيارات</div>
+                                <div class="sq-shop-card__cat"><i class="ri-checkbox-circle-fill"></i> معرض موثق • الشويخ</div>
+                            </div>
+                        </div>
+                        <div class="sq-shop-card__bottom">
+                            <span>42 سيارة معروضة</span>
+                            <a href="#shop-1" class="sq-shop-card__link">تصفح المعرض ←</a>
+                        </div>
+                    </div>
+
+                    <div class="sq-shop-card">
+                        <div class="sq-shop-card__top">
+                            <span class="sq-shop-card__icon"><i class="ri-building-2-fill"></i></span>
+                            <div>
+                                <div class="sq-shop-card__name">دار الكويت العقارية</div>
+                                <div class="sq-shop-card__cat"><i class="ri-checkbox-circle-fill"></i> مكتب معتمد • شرق</div>
+                            </div>
+                        </div>
+                        <div class="sq-shop-card__bottom">
+                            <span>68 عقار معروض</span>
+                            <a href="#shop-2" class="sq-shop-card__link">تصفح المكتب ←</a>
+                        </div>
+                    </div>
+
+                    <div class="sq-shop-card">
+                        <div class="sq-shop-card__top">
+                            <span class="sq-shop-card__icon"><i class="ri-smartphone-fill"></i></span>
+                            <div>
+                                <div class="sq-shop-card__name">تك زون للهواتف</div>
+                                <div class="sq-shop-card__cat"><i class="ri-checkbox-circle-fill"></i> متجر معتمد • حولي</div>
+                            </div>
+                        </div>
+                        <div class="sq-shop-card__bottom">
+                            <span>95 جهاز معروض</span>
+                            <a href="#shop-3" class="sq-shop-card__link">تصفح المتجر ←</a>
+                        </div>
+                    </div>
+
+                    <div class="sq-shop-card">
+                        <div class="sq-shop-card__top">
+                            <span class="sq-shop-card__icon"><i class="ri-sofa-fill"></i></span>
+                            <div>
+                                <div class="sq-shop-card__name">مفروشات البيت الحديث</div>
+                                <div class="sq-shop-card__cat"><i class="ri-checkbox-circle-fill"></i> معرض موثق • الضجيج</div>
+                            </div>
+                        </div>
+                        <div class="sq-shop-card__bottom">
+                            <span>54 إعلان</span>
+                            <a href="#shop-4" class="sq-shop-card__link">تصفح المعرض ←</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             10. SIMPLE APP DOWNLOAD BANNER
+             ================================================================== -->
+        <section id="apps_download" aria-label="تطبيق الجوال">
+            <div class="sq-container">
+                <div class="sq-app-box">
+                    <div class="sq-app-box__info">
+                        <h2 class="sq-app-box__title">حمّل تطبيق سوق إن — صوّر وبِع من جوالك في ثوانٍ</h2>
+                        <p class="sq-app-box__desc">
+                            تصفح آلاف الإعلانات اليومية، استقبل رسائل المشترين فوراً، وأضف إعلانك مجاناً مباشرة من كاميرا جوالك.
+                        </p>
+                        <div class="sq-app-box__btns">
+                            <a href="https://play.google.com/store" target="_blank" class="sq-app-btn">
+                                <i class="ri-google-play-fill" style="color: #34d399; font-size: 1.25rem;"></i>
+                                <span>تحميل من Google Play</span>
+                            </a>
+                            <a href="https://www.apple.com/app-store/" target="_blank" class="sq-app-btn">
+                                <i class="ri-apple-fill" style="font-size: 1.25rem;"></i>
+                                <span>تحميل من App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="../assets/img/screens.png" alt="تطبيق سوق إن" style="max-height: 180px;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================================================
+         11. CLEAN SIMPLE FOOTER
+         ====================================================================== -->
+    <footer class="sq-footer">
+        <div class="sq-container">
+            <div class="sq-footer__grid">
+                <div>
+                    <h4 class="sq-footer__heading">سوق إن (SOOQin)</h4>
+                    <p style="font-size: 0.84rem; color: #9ca3af; line-height: 1.7;">
+                        موقع وتطبيق الإعلانات المبوبة الأول للبيع والشراء في الكويت. سيارات، عقارات، إلكترونيات، أثاث، وخدمات بدون وسيط.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="sq-footer__heading">أقسام البيع والشراء</h4>
+                    <ul class="sq-footer__links">
+                        <li><a href="#cars-ads">حراج السيارات</a></li>
+                        <li><a href="#realestate-ads">عقارات للبيع والإيجار</a></li>
+                        <li><a href="#electronics-ads">موبايلات وإلكترونيات</a></li>
+                        <li><a href="#shops-sec">المعارض والمتاجر</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="sq-footer__heading">روابط سريعة</h4>
+                    <ul class="sq-footer__links">
+                        <li><a href="#post-ad">أضف إعلانك مجاناً</a></li>
+                        <li><a href="#about">عن سوق إن</a></li>
+                        <li><a href="#terms">شروط الاستخدام</a></li>
+                        <li><a href="#privacy">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="sq-footer__heading">تواصل معنا</h4>
+                    <ul class="sq-footer__links">
+                        <li><a href="tel:+96522000000"><i class="ri-phone-line"></i> +965 2200 0000</a></li>
+                        <li><a href="mailto:info@sooqin.com"><i class="ri-mail-line"></i> info@sooqin.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sq-footer__copy">
+                <span>© 2026 سوق إن (SOOQin) — جميع الحقوق محفوظة.</span>
+                <span>منصة الإعلانات والبيع والشراء في الكويت</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Favorite Heart Toggle
+        document.querySelectorAll('.sq-ad-card__fav').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var active = btn.classList.toggle('is-active');
+                var icon = btn.querySelector('i');
+                if (icon) icon.className = active ? 'ri-heart-3-fill' : 'ri-heart-3-line';
+            });
+        });
+    </script>
+</body>
+
+</html>
